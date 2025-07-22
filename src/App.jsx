@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <p>Hello</p>
-      <button onClick={sayHello}>Say hello</button>
+      <button className="border border-gray-300 shadow-md bg-white px-2 py-1 rounded-sm transition-transform hover:scale-110" onClick={sayHello}>Say hello</button>
     </>
   );
 }
