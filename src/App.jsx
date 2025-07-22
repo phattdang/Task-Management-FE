@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import RootPage from "./pages/RootPage";
+import HomaPage from "./pages/HomePage";
 
 function App() {
   const [str, setStr] = useState("");
@@ -14,8 +17,13 @@ function App() {
 
   return (
     <>
-      <p>Hello</p>
-      <button className="border border-gray-300 shadow-md bg-white px-2 py-1 rounded-sm transition-transform hover:scale-110" onClick={sayHello}>Say hello</button>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<RootPage />}>
+            <Route index element={<HomaPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
